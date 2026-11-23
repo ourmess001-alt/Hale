@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F2EFE9;
+  --foreground: #161616;
+  --surface: #EAE6DF;
+  --surface-light: #F7F5F0;
+  --muted: #6B6863;
+  --border: rgba(22, 22, 22, 0.08);
+  --accent: #161616;
+  --accent-contrast: #F2EFE9;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-canvas: var(--background);
+  --color-ink: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-light: var(--surface-light);
+  --color-muted: var(--muted);
+  --color-hairline: var(--border);
+  --font-serif: var(--font-serif), "Instrument Serif", Georgia, serif;
+  --font-sans: var(--font-sans), Inter, system-ui, -apple-system, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+html, body {
+  min-height: 100%;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Inter, system-ui, sans-serif;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure all clickable interactive elements clearly show the pointer cursor */
+button,
+[role="button"],
+a,
+select,
+summary,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+label[for],
+label:has(input[type="checkbox"]),
+label:has(input[type="radio"]),
+.cursor-pointer {
+  cursor: pointer;
+}
+
+button:disabled,
+[role="button"][aria-disabled="true"],
+input:disabled {
+  cursor: not-allowed;
+}
+
+/* Hairline borders */
+.hairline-b {
+  border-bottom: 1px solid var(--border);
+}
+.hairline-t {
+  border-top: 1px solid var(--border);
+}
+.hairline-r {
+  border-right: 1px solid var(--border);
+}
+.hairline-l {
+  border-left: 1px solid var(--border);
+}
+.hairline-all {
+  border: 1px solid var(--border);
+}
+
+/* Luxury minimal scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(22, 22, 22, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(22, 22, 22, 0.35);
+}
+
+/* Luxury editorial text selection */
+::selection {
+  background: #161616;
+  color: #F2EFE9;
+}
+
+/* Smooth drag cursor */
+.grab-cursor {
+  cursor: grab;
+}
+.grab-cursor:active {
+  cursor: grabbing;
+}
+
+/* 2.5D Rail Positioning & Hook Alignment */
+:root {
+  --rail-hook-x: 50%;
+}
+@media (min-width: 1024px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --rail-hook-x: calc(14% + 190px);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.rail-item-pos {
+  left: calc(50% - 140px);
+}
+@media (min-width: 640px) {
+  .rail-item-pos {
+    left: calc(50% - 170px);
+  }
+}
+@media (min-width: 1024px) {
+  .rail-item-pos {
+    left: 14%;
+  }
 }
