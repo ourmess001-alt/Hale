@@ -15,7 +15,6 @@ const DEFAULT_THEME: ThemeConfig = {
   storeName: "HALE",
   subTitle: "Autumn / Winter 26",
   backgroundTone: "alabaster",
-  showLookbook: true,
   showPhilosophy: true,
   railPhysics: "silky",
   serifHeading: true,

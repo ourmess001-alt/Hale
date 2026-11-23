@@ -7,7 +7,7 @@ import CraftManifesto from "@/components/home/CraftManifesto";
 import { useThemeStore } from "@/store/useThemeStore";
 
 export default function Home() {
-  const { showLookbook, showPhilosophy } = useThemeStore();
+  const { showPhilosophy } = useThemeStore();
 
   return (
     <main className="w-full">
@@ -15,7 +15,7 @@ export default function Home() {
       <GarmentRail />
 
       {/* 2. Interactive Lookbook Carousel ("One man, eight pieces.") */}
-      {showLookbook && <LookbookCarousel />}
+      <LookbookCarousel />
 
       {/* 3. Atelier Craft Manifesto & Philosophy */}
       {showPhilosophy && <CraftManifesto />}

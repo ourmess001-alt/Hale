@@ -57,7 +57,6 @@ export interface ThemeConfig {
   storeName: string;
   subTitle: string;
   backgroundTone: "alabaster" | "bone" | "concrete" | "sand" | "dark";
-  showLookbook: boolean;
   showPhilosophy: boolean;
   railPhysics: "silky" | "snappy" | "floating";
   serifHeading: boolean;

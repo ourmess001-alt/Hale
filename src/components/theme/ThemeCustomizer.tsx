@@ -9,7 +9,6 @@ export default function ThemeCustomizer() {
   const {
     storeName,
     backgroundTone,
-    showLookbook,
     showPhilosophy,
     railPhysics,
     serifHeading,
@@ -176,26 +175,6 @@ export default function ThemeCustomizer() {
                 <div className="space-y-3 pt-2 hairline-t">
                   <label className="text-[10px] uppercase tracking-widest text-[var(--muted)] block">
                     Homepage Sections
-                  </label>
-
-                  {/* Lookbook toggle */}
-                  <label className="flex items-center justify-between p-2.5 border border-[var(--border)] rounded-sm bg-[var(--surface-light)]/50 cursor-pointer">
-                    <div>
-                      <div className="text-xs font-medium">
-                        Lookbook ("Wardrobe Study")
-                      </div>
-                      <div className="text-[10px] text-[var(--muted)]">
-                        Full-body on-model outfit carousel
-                      </div>
-                    </div>
-                    <input
-                      type="checkbox"
-                      checked={showLookbook}
-                      onChange={(e) =>
-                        updateTheme({ showLookbook: e.target.checked })
-                      }
-                      className="accent-[var(--foreground)] w-4 h-4"
-                    />
                   </label>
 
                   {/* Philosophy section toggle */}
